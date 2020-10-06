@@ -1,4 +1,4 @@
-# MIT 6.824: Lecture 5 -  Go, Threads, and Raft - A blog by Timi Adeniran
+# MIT 6.824: Lecture 5 -  Go, Threads, and Raft
 
 Although 'Raft' is mentioned in the title, a better title for this post is 'Concurrency in Go', as Raft will not be discussed until the next post. Also, unlike other posts on this blog, this one will also feature code samples! Examples of good and bad Go code will be shown for building concurrent applications.
 
@@ -12,7 +12,7 @@ Note that although the examples below are in Go, these concepts apply more gener
 * [Conclusion](#conclusion)
 * [Further Reading](#further-reading)
 
-### Mutexes [\#](#mutexes)
+### Mutexes
 
 Goroutines are lightweight threads in Go. Every Go program has at least one goroutine running, which is the main one from which other goroutines are started. Goroutines execute their functions asynchronously.
 
@@ -52,7 +52,7 @@ A modified version of the bank example is shown below. In this example, we see o
 
 ![](bank-proper.png)
 
-### Condition Variables [\#](#condition-variables)
+### Condition Variables
 
 To introduce condition variables, let's consider this example below.
 
@@ -80,7 +80,7 @@ The general format when using condition variables is as shown in the pseudocode 
 
 ![](cond-var-structure.png)
 
-### Channels [\#](#channels)
+### Channels
 
 A [Channel](https://tour.golang.org/concurrency/2) is a primitive for communicating between goroutines. The general idea is that one goroutine sends a *message* on the channel, and that message is received from that channel on a separate goroutine.
 
@@ -101,11 +101,11 @@ A major use of channels is for implementing producer/consumer queues.
 
 If you're a Java developer, the [BlockingQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html) interface is similar to Go Channels, with the [ArrayBlockingQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ArrayBlockingQueue.html) being an implementation of a buffered channel, and a [SynchronousQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/SynchronousQueue.html) being an unbuffered channel.
 
-### Conclusion [\#](#conclusion)
+### Conclusion
 
 We have gone over some Go constructs that will help when building concurrent applications. I've had to make use of some of these in working out the [labs](https://pdos.csail.mit.edu/6.824/labs/lab-mr.html). If you're interested in learning more about concurrency in Go, I would highly recommend checking out [this](https://golang.org/ref/mem) page on the official Go site.
 
-### Further Reading [\#](#further-reading)
+### Further Reading
 
 * [The Go Memory Model](https://golang.org/ref/mem) - Official Documentation
 * [Go Concurrency](https://pdos.csail.mit.edu/6.824/notes/l-go-concurrency.txt) - MIT 6.824 Lecture Notes
